@@ -2,16 +2,17 @@ let fs = require('fs');
 let readline = require('readline');
 
 function remLineBreaks(filepath){
+    //console.log(filepath.length);
     for(let i = 1; i < filepath.length; i++){
-        let readInterface = readline.createInterface({
-            input: fs.createReadStream(filepath[i]),
-            output: process.stdout,
-            console: false
-        });    
-        readInterface.on('line', function(line) {
-            // /^\s*[\r\n]/gm
-            line = line.replace(/^\s*$(?:\r\n?|\n)/gm,"");
-        });
+        // read file
+        fs.readFile(filepath[i], 'utf8' , (err, data) => {
+            if (err) {
+              console.error(err)
+              return
+            }
+            // replace multiple line break with single line break
+            console.log(data.replace(/(\r\n|\r|\n){2,}/g, '$1\n'));
+          })
     }
 }
 
