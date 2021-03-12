@@ -10,10 +10,10 @@ input = process.argv.slice(2);
 // node wCat <option> filename1 filename2 ..
 let option = input[0];
 
-if(option !== '-s' && option !== '-n' && option !== 'b'){
+if(option !== '-s' && option !== '-n' && option !== '-b'){
     readFileObj.read_files(input);
 }
-else if(option == '-s' || option == '-n' || option == 'b'){
+else if(option == '-s' || option == '-n' || option == '-b'){
     
     switch(option){
         case '-s':

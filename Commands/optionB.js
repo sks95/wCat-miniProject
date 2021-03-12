@@ -2,6 +2,7 @@ let fs = require('fs');
 let readline = require('readline');
 
 // filepath = process.argv.slice(2);
+
 function dispLineNum(filepath){
     for(let i = 1; i < filepath.length; i++){
         // let counter = 1;
@@ -19,6 +20,7 @@ function dispLineNum(filepath){
           })
     }
 }
+// dispLineNum(filepath);
 
 module.exports = {
     dispLine: dispLineNum
